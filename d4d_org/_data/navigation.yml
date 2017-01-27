@@ -1,0 +1,26 @@
+- title: Home
+  url: "/"
+  side: left
+
+- title: About
+  url: "/info/"
+  side: left
+
+- title: "Projects"
+  url: "/projects/"
+  side: left
+#  dropdown:
+#  - title: "Project A"
+#    url: "/projects/a/"
+#  - title: "Project B"
+#    url: "/projects/b/"
+#  - title: "Project C"
+#    url: "/projects/c/"
+
+#- title: "Search"
+#  url: "/search/"
+#  side: right
+
+#- title: "Blog"
+#  url: https://medium.com/data-for-democracy
+#  side: right

@@ -18,7 +18,7 @@ Volunteering at Data For Democracy can entail anything from hanging out in Slack
 
 The following is a list of our current active projects.
 
-### [Assemble](https://github.com/Data4Democracy/assemble) 
+### Assemble
 **Type:** Community-led 
 **Project Description:** Developing a toolkit and technological infrastructure that researchers can use to study online communities and their characteristics. 
 **Project Leads:** @bstarling, @nick

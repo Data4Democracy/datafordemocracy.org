@@ -18,10 +18,10 @@ widget2:
   text: 'Write some words about how many ongoing projects we have, maybe highlighting something new and/or exciting.  Make the image something interesting from a project.'
   image: widget-1-302x182.jpg
 widget3:
-  title: "Technology Partners"
-  url: '/tech_partners/'
+  title: "Partners"
+  url: '/partners/'
   image: widget-github-303x182.jpg
-  text: 'Make the image a collage of their logos.  Write some words about how awesome people like supporting our work.  We can link from here or link from the tech_partners page.'
+  text: 'Make the image a collage of their logos.  Write some words about how awesome people like supporting our work and working with us.'
 #
 # Use the call for action to show a button on the frontpage
 #

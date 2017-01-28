@@ -17,10 +17,18 @@
 #  - title: "Project C"
 #    url: "/projects/c/"
 
+- title: "Partners"
+  url: "/partners/"
+  side: left
+
+- title: "Join Us"
+  url: "/join_us/"
+  side: left
+
 #- title: "Search"
 #  url: "/search/"
 #  side: right
 
-#- title: "Blog"
-#  url: https://medium.com/data-for-democracy
-#  side: right
+- title: "Blog"
+  url: https://medium.com/data-for-democracy
+  side: right

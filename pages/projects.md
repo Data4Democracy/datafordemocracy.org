@@ -7,36 +7,65 @@ permalink: "/projects/"
 header:
     image_fullwidth: "header_drop.jpg"
 ---
-Our active projects are focused on understanding the behavior of online communities, election transparency, a USA dashboard (like KPIs for America), analysis on the extreme right, Medicare drug spending, and campaign spending (in support of work by ProPublica). These projects are all self-organized and community led. We’re also talking with a few US cities about more formal partnerships, and a couple of international NGOs about partnering on projects that don’t have a US focus.
+Data For Democracy looks for projects that have a strong collaborative nature, and leverage data and technology to create positive social impact.
 
-### [Assemble](https://github.com/Data4Democracy/assemble)  
+We engage in a mix of:
+1) Community-led projects, which are proposed and self-organized by Data For Democracy members. Most of our current projects fall into this category.
+2) Partner-led projects, which involve more formal collaboration with city governments and local and international NGOs.
 
-**Project Description:** Community working to build tools and infrastructure to enable the study of online communities and their characteristics. As we work through our own projects, our goal is to build a toolkit which takes care of common tasks so researchers do not have to reinvent the wheel with each new project.  
+If you'd like to get involved, Data For Democracy offers a variety of opportunities to suit all levels of commitment, skill, and experience. We welcome first-timers, and are keen to support them in their learning.
+Volunteering at Data For Democracy can entail anything from hanging out in Slack discussing ideas, to contributing periodic code commits, to leading a project of your own. Depending on your comfort level, you can contribute as intensively or as casually as you like!
 
-### Boston Crash Modeling
+The following is a list of our current active projects.
 
-**Project Description:** This is an official collaboration between the City of Boston's Analytics Team and Data for Democracy. We want to build a crash prediction modeling application. This would combine things like [our crowdsourced safety concerns dataset](http://app01.cityofboston.gov/VZSafety/) and [crash reports](http://app01.cityofboston.gov/VisionZero/) with a wide range of other data from our own open data portal as well as from other sources like the state's transportation and transit agencies, weather conditions feeds, and traffic reports from sites like Google. The end result will be a set of dynamic predictions we can use to identify potential trouble spots and direct timely safety interventions--everything from protected bike lanes and better-marked crosswalks to new street lights and traffic light timings. We'll make this publicly-available to everyone through a hosted map application, and develop the project as an open source template that can be adapted for use by other cities.
+### [Assemble](https://github.com/Data4Democracy/assemble) 
+**Type:** Community-led 
+**Project Description:** Developing a toolkit and technological infrastructure that researchers can use to study online communities and their characteristics. 
+**Project Leads:** @bstarling, @nick
+**Github Repo:** https://github.com/Data4Democracy/assemble
+**Slack Channel:** #assemble
 
-### [Drug Spending](https://github.com/Data4Democracy/drug-spending)  
+### Boston Crash Modeling 
+**Type:** Partner-led; official collaboration with the City of Boston's Analytics Team
+**Project Description:** Building an application that will model and predict traffic crashes in order to direct safety interventions.
+**Project Leads:** @therriault (City of Boston lead), @niccolley (Data for Democracy lead)
+**Public Datasets:** [Our crowdsourced safety concerns dataset](http://app01.cityofboston.gov/VZSafety/), [Crash reports](http://app01.cityofboston.gov/VisionZero/)
+**Slack Channel:** #boston-crash-modeling
 
-**Project Description:** Help the public understand what their tax dollars are going toward. Eg, what % of the eligible population (and/or all Americans) are benefiting from Medicare prescription drug coverage? How many Medicare enrollees are being treated for common/relatable conditions like diabetes, Alzheimer's, or depression? What proportion of Medicare prescription spending is on each of those conditions? 
+### Drug Spending  
+**Type:** Community-led 
+**Project Description:** Researching where and how Medicare tax dollars are being spent, and presenting these findings in clear and accessible ways.
+**Project Leads:** @mattgawarecki, @jenniferthompson
+**Github Repo:** https://github.com/Data4Democracy/drug-spending
+**Public Dataset:** https://data.world/data4democracy/drug-spending
+**Slack Channel:** #drug-spending
 
-### [Election Transparency](https://github.com/Data4Democracy/election-transparency)  
+### Election Transparency
+**Type:** Community-led 
+**Project Description:** Aggregating and normalizing county-level election results, to be shared with the broader public.
+**Project Leads:** @chris_dick, @scottcame, @rachelanddata
+**Github Repo:** https://github.com/Data4Democracy/election-transparency
+**Public Dataset:** https://data.world/data4democracy/election-transparency
+**Slack Channel:** #election-transparency
 
-**Project Description:** Aggregating and normalizing county-level election results to be shared with the broader community. 
-
-### [Internal Displacement](https://github.com/Data4Democracy/internal-displacement)
-
-**Project Description:**  
-Classifying, tagging, analyzing and visualizing news events about internal displacement.
+### Internal Displacement
+**Type:** Community-led 
+**Project Description:** Classifying, tagging, analyzing, and visualizing news events about internal displacement.
+**Project Lead:** @georgerichardson
+**Github Repo:** https://github.com/Data4Democracy/internal-displacement
+**Public Dataset:** https://data.world/data4democracy/election-transparency
+**Slack Channel:** #internal-displacement
 
 ### ProPublica  
+**Type:** Partner-led; collaboration with ProPublica
+**Project Description:** Carrying out data analysis to support the non-profit investigative journalism organization [ProPublica](http://propublica.org).
+**Project Leads:** @ryanes, @eric_bickel
+**Public Dataset:** https://data.world/data4democracy/propublica
+**Slack Channel:** #propublica
 
-**Project Description:** Working on projects to support the non-profit investigative journalism publication, [ProPublica](http://propublica.org). The team's first project is [analyzing campaign spending data](https://github.com/Data4Democracy/campaign_expenditures). 
-
-### [USA Dashboard](https://github.com/Data4Democracy/usa-dashboard/issues)  
-
-**Project Description:** A dashboard of key metrics for the USA. The team's first KPIs are around city-level crime data. 
-
-
-
+### USA Dashboard
+**Type:** Community-led 
+**Project Description:** Creating a dashboard that will display key metrics, such as city-level crime data, for various regions of the USA.
+**Project Lead:** @sjt
+**Github Repo:** https://github.com/Data4Democracy/usa-dashboard
+**Slack Channel:** #usa-dashboard

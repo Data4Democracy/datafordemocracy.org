@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Data for Democracy
 email: jonathon@datafordemocracy.org
-description: Data for Democracy's mission is to be an inclusive community for data scientists and technologists to volunteer and collaborate on projects that make a positive impact on society.
+description: Data for Democracy - D4D
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "datafordemocracy.org"
 twitter_username: data4democracy

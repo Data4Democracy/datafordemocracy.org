@@ -6,3 +6,8 @@
 .card{
 	background-color: transparentize($white, 0.15) !important;
 }
+
+header.main-header{
+  background-color: $mdblack;
+  height: auto;
+}

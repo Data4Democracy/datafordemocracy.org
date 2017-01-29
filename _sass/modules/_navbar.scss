@@ -2,14 +2,17 @@
 // Navbar
 // ==========================================================================
 
-.navbar {	
+.navbar {
 	position: relative;
-	@include mq(small) { 
-		margin-bottom: em(40px);
+	padding-top:0 !important;
+	@include mq(small) {
+		margin-bottom: em(10px);
+		background: $mdblack;
 	}
-	@include mq(medium) { 
+	@include mq(medium) {
 		float: right;
 		margin-top: em(9px);
 		margin-bottom: em(24px);
+		background: $mdblack;
 	}
 }

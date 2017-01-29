@@ -15,15 +15,15 @@
   text-align: center;
   display: block;
   padding: em(8px, 20px);
-  border-bottom: 2px solid transparent;
+  // border-bottom: 2px solid transparent;
   @include mq(small) {
-    border-bottom-color: palette(grey, xx-light);
+    // border-bottom-color: palette(grey, xx-light);
     padding-top: em(12px, 18px);
     padding-bottom: em(12px, 18px);
   }
 }
 %nav-item-on {
-  color: palette(black);
+  color: palette(grey);
   border-color: $color-primary;
 }
 

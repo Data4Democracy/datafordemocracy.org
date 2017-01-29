@@ -4,9 +4,17 @@
 
 .main-header {
   @extend %clearfix;
-    @include mq(medium)  {
-      height: 48px;
-      background: palette(grey, lightest);
-    }
+  margin-top: -20px;
+  padding-top: 20px;
+  background: $mdblack;
+  @include mq(medium)  {
+    height: 48px;
+    background: $mdblack;
+  }
 
+
+}
+
+header.main-header{
+  padding-top: 30px;
 }

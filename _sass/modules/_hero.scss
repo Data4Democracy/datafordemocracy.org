@@ -3,13 +3,13 @@
 // ==========================================================================
 
 .hero {
-	height: 50em;
+	height: 30em;
 	background: url('#{$path--rel}/backlit-keyboard.jpg');
 	background-blend-mode: multiply;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
-	margin-bottom: em(50px);
+	margin-bottom: em(10px);
 }
 
 .hero-text{
@@ -19,3 +19,27 @@
 	font-size: 3em;
 	text-align: center;
 }
+
+@include mq(small){
+	.hero {
+		height: 40em;
+		background: url('#{$path--rel}/backlit-keyboard.jpg');
+		background-blend-mode: multiply;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		margin-bottom: em(10px);
+	}
+
+	.hero-text{
+
+		padding: 0 .5em;
+
+	}
+
+}
+
+@include mq(medium){
+	.hero {
+		height: 35em;
+	}}

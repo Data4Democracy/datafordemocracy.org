@@ -2,7 +2,7 @@
 // Nav
 // ==========================================================================
 
-.nav {	
+.nav {
 	@include e(item) {
 		@extend %nav-item-horz;
 		@include m(current) {

@@ -1,0 +1,23 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {	
+	@include e(item) {
+		@extend %nav-item-horz;
+		@include m(current) {
+			@extend %nav-item-horz;
+			a {
+				@extend %nav-item-link;
+				@extend %nav-item-on;
+			}
+		}
+		a {
+			@extend %nav-item-link;
+			color: palette(grey, light);
+			&:hover {
+				@extend %nav-item-on;
+			}
+		}
+	}
+}

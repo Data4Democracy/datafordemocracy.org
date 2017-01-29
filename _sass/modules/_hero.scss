@@ -1,0 +1,14 @@
+// ==========================================================================
+// Hero
+// ==========================================================================
+
+.hero {
+	height: 40em;
+	background: url('#{$path--rel}/backlit-keyboard.jpg');
+	            // linear-gradient(#75da8f, #77cae9);
+	background-blend-mode: multiply;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	margin-bottom: em(50px);
+}

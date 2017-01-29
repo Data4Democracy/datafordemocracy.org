@@ -1,0 +1,22 @@
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+.pagination {
+	display: inline-block;
+	padding: em(5px) em(10px);
+	border-radius: $br--default;
+	background: palette(grey, lightest);
+	margin-bottom: em(12px);
+	font-size: em(15px);
+
+	@include e(arrow-next) {
+		margin-left: em(4px);
+	}
+	@include e(arrow-prev) {
+		margin-right: em(4px);
+	}
+	@include e(page) {
+		margin: 0 em(5px);
+	}
+}

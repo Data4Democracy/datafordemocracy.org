@@ -1,0 +1,25 @@
+<header class="main-header" role="banner">
+
+  <div class="container">
+    <!-- <div class="grid__col--12"> -->
+      <a class="site-logo" href="/" title="Data4Democracy – Home">
+        Data for Democracy
+      </a>
+      <nav class="navbar" role="navigation">
+        <ul class="nav">
+        {% for page in site.pages %}
+
+          {% if page.title %}
+          <li class="nav__item">
+            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          </li>
+          {% endif %}
+
+        {% endfor %}
+        </ul>
+      </nav>
+
+
+    <!-- </div> -->
+  </div>
+</header>

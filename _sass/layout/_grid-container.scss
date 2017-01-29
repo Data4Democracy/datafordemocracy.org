@@ -1,0 +1,23 @@
+// ==========================================================================
+// Grid Container
+// ==========================================================================
+
+.grid {
+	@extend %clearfix;
+	@extend .centered;
+	width: 90%;
+
+	// Make nested grid container 100%
+	[class*="grid__col--"] > & {
+		width: 100%;
+	}
+
+	// Make grid 75% in med breakpoint
+	@include mq(medium) {
+		 width: 75%;
+	}
+	// Set max-width for grid container
+	@include mq(large) {
+		max-width: $g-cont-max-w;
+	}
+}

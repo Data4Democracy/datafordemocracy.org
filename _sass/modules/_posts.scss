@@ -1,0 +1,42 @@
+// ==========================================================================
+// Posts
+// ==========================================================================
+
+.post {
+	@include e(item) {
+		border-bottom: 1px dotted palette(grey, light);
+		margin-bottom: em(40px);
+		padding-bottom: em(32px);
+		&:last-child {
+			border: none;
+		}
+	}
+	@include e(header) {
+		@include mq(medium) {
+		  margin-top: em(50px);
+		  margin-bottom: em(44px);
+  	}
+	}
+	@include e(content) {
+		margin-bottom: em(62px);
+		li {
+			margin: em(4px) 0;
+		}
+	}
+	@include e(meta) {
+		margin-top: em(2px);
+		margin-bottom: em(26px);
+	}
+	@include e(author) {
+		color: $color-primary;
+		font-weight: $font-weight--bold;
+	}
+	@include e(sep) {
+		color: palette(grey, x-light);
+		padding: 0 em(6px);
+	}
+	@include e(date) {
+		color: 	palette(grey, light);
+		font-size: em(15px);
+	}
+}

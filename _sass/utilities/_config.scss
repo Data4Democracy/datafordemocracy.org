@@ -4,8 +4,8 @@
 
 // Font Stacks
 
-$font-url--google        : 'http://fonts.googleapis.com/css?family=PT+Sans:400,700';
-$font-family--primary    : 'PT Sans', sans-serif;
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800';
+$font-family--primary    : 'Open Sans', sans-serif;
 $font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // Font Weights
@@ -14,7 +14,7 @@ $font-weight--thin       : 100;
 $font-weight--light      : 300;
 $font-weight--medium     : 400;
 $font-weight--bold       : 700;
-$font-weight--ultra-bold : 900;
+$font-weight--ultra-bold : 800;
 
 // Descriptive Base Colors
 
@@ -64,7 +64,8 @@ $ui-colors: (
   success : $green,
   error   : $datared,
   warning : $orange,
-  info    : $medfedblue
+  info    : $medfedblue,
+  primary : $datared
 );
 
 //Headers
@@ -93,7 +94,7 @@ $path--rel      : "../img";
 $g-col-width    : 65px !default;
 $g-gutter-width : 20px !default;
 $g-col-count    : 12 !default;
-$g-cont-max-w   : 810px !default;
+$g-cont-max-w   : 1500px !default;
 
 // Breakpoints
 

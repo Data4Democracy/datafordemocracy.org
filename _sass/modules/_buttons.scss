@@ -9,7 +9,7 @@
 [class^="btn--"] {
   @extend %btn;
   @extend %center-align;
-  margin-bottom: em(20px, 14px); 
+  margin-bottom: em(20px, 14px);
   @include mq(small) {
   	width: 100%;
   }
@@ -19,4 +19,3 @@
 		@include doubly(20px);
   }
 }
-

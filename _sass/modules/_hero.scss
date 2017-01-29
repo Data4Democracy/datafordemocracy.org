@@ -3,12 +3,19 @@
 // ==========================================================================
 
 .hero {
-	height: 40em;
+	height: 50em;
 	background: url('#{$path--rel}/backlit-keyboard.jpg');
-	            // linear-gradient(#75da8f, #77cae9);
 	background-blend-mode: multiply;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
 	margin-bottom: em(50px);
+}
+
+.hero-text{
+	color: $offwhite;
+	padding: 1em;
+	font-weight: $font-weight--ultra-bold;
+	font-size: 3em;
+	text-align: center;
 }

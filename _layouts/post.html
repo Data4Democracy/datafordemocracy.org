@@ -2,20 +2,22 @@
 layout: default
 ---
 <div class="grid">
-	<div class="grid__col--12 post">
-    <header class="post__header">
-      <h1 class="post__title--grouped">{{ page.title }}</h1>
-      <div class="post__meta">
-        <b class="post__author">{% if page.author %}{{ page.author }}{% endif %}</b>
-        <b class="post__sep">&#x25cf;</b>
-        <b class="post__date">{{ page.date | date: "%b %-d, %Y" }}</b>
-      </div>
-    </header>
-    {% if page.image %}
-    <img class="feat-img is-hidden-mobile" src="/img/{{ page.image }}">
-    {% endif %}
-    <article class="post__content">
-      {{ content }}
-    </article>   
-	</div>
-</div>
+  <div class="grid__col--12">
+    <ul class="post">
+      {% for post in site.posts %}
+        <li class="post__item">
+          <a class="post__title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <div class="post__meta">
+            <b class="post__author">{{ post.author }}</b>
+            <b class="post__sep">&#x25cf;</b>
+            <b class="post__date">{{ post.date | date: "%b %-d, %Y" }}</b>
+          </div>
+
+          {{ post.excerpt }}
+
+          <a class="btn--default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>

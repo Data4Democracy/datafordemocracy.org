@@ -1,0 +1,10 @@
+{% for service in page.services %}
+  <div class='fadein mod modIconText' data-delay='{{ 300 | times:forloop.index0 }}'>
+    <div class='icon-text-simple'>
+      <i class='fa fa-{{service.icon}}'></i>
+      <h3>{{service.title}}</h3>
+      <p>{{service.desc}}</p>
+    </div>
+    <div class='two spacing'></div>
+  </div>
+{% endfor %}

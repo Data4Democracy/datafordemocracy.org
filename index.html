@@ -1,0 +1,364 @@
+---
+layout: default
+section_id: home
+slides:
+  - bg: images/@stock/slide-1.jpg
+    small_title:
+      klass: bottom-to-top
+      text: Using data and technology for
+    title:
+      klass: bottom-to-top
+      text: Social impact
+    buttons:
+      klass: bottom-to-top
+      items:
+        - text: Learn More
+          link_to: http://themeforest.net/user/honryou/portfolio?ref=honryou
+  - bg: images/@stock/slide-4.jpg
+    klass: centered-text
+    small_title:
+      klass: bottom-to-top
+      text: We make websites that are
+    title:
+      klass: bottom-to-top
+      text: Creative &amp; Powerful
+    buttons:
+      klass: bottom-to-top
+      items:
+        - klass: boxed
+          text: View Features
+          link_to: http://themeforest.net/user/honryou/portfolio?ref=honryou
+        - text: Purchase Now
+          link_to: http://themeforest.net/user/honryou/portfolio?ref=honryou
+  - bg: images/@stock/slide-5.jpg
+    small_title:
+      klass: bottom-to-top
+      text: This is a creative theme that you'll
+    title:
+      klass: bottom-to-top
+      text: definitely love...
+    buttons:
+      klass: bottom-to-top
+      items:
+        - text: Learn More
+          link_to: http://themeforest.net/user/honryou/portfolio?ref=honryou
+
+
+
+works:
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+  - image: images/@stock/work-1.jpg
+    title: Assemble
+    link_to: projects/assemble.html
+    klass: graphi-design
+    desc: Design &amp; Development
+
+
+services:
+  - icon: trophy
+    title: Web Design
+    desc: Acusamus laborum totam omnis inventore et error aut et eos aut. fuga mollitia vitae id enim omnis perspiciatis. modi maxime eos.
+  - icon: cogs
+    title: Web Development
+    desc: Acusamus laborum totam omnis inventore et error aut et eos aut. fuga mollitia vitae id enim omnis perspiciatis. modi maxime eos.
+  - icon: pagelines
+    title: Branding
+    desc: Acusamus laborum totam omnis inventore et error aut et eos aut. fuga mollitia vitae id enim omnis perspiciatis. modi maxime eos.
+  - icon: lock
+    title: Security
+    desc: Acusamus laborum totam omnis inventore et error aut et eos aut. fuga mollitia vitae id enim omnis perspiciatis. modi maxime eos.
+
+milestones:
+  - icon: folder-open
+    from: 0
+    to: 69
+    title: Projects Completed
+  - icon: coffee
+    from: 0
+    to: 726
+    title: Cups of coffee offered
+  - icon: thumbs-up
+    from: 0
+    to: 59
+    title: Happy clients
+  - icon: file-text
+    from: 0
+    to: 21
+    title: Articles Published
+
+---
+
+
+<div class='mod modDefaultSlider'>
+  <div class='sequence' data-autostop='on' data-timeout='0'>
+    <a class='sequence-prev' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <a class='sequence-next' href='javascript:void(0);'>
+      <span></span>
+    </a>
+    <ul class='sequence-pagination'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign class = 'current' %}
+        {% else %}
+          {% assign class = '' %}
+        {% endif %}
+        <li class="{{class}}"></li>
+      {% endfor %}
+    </ul>
+    <ul class='sequence-canvas'>
+      {% for slide in page.slides %}
+        {% if forloop.first %}
+          {% assign style = 'static' %}
+        {% else %}
+          {% assign style = '' %}
+        {% endif %}
+
+        <li class='frame {{style}} {{ slide.klass }}'>
+          <div class='bg' style='background-image: url({{ slide.bg}});'></div>
+          <div class='small-title {{ slide.small_title.klass }}'>
+            <div class='row'>
+              <div class='large-12 columns'>
+                <h2>{{ slide.small_title.text }}</h2>
+              </div>
+            </div>
+          </div>
+          <div class='title {{ slide.title.klass }}'>
+            <div class='row'>
+              <div class='large-12 columns'>
+                <h2>{{ slide.title.text }}</h2>
+              </div>
+            </div>
+          </div>
+          <div class='buttons-wrapper {{ slide.buttons.klass }}'>
+            <div class='row'>
+              <div class='large-12 columns'>
+                <div class='two spacing'></div>
+                {% for button in slide.buttons.items %}
+                  <a class='button {{ button.klass }}' href='{{ button.link_to }}'>{{ button.text }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!--
+<div class="four spacing"></div>
+
+<div class="row">
+  <div class="medium-3 large-3 columns">
+    {% include icon-text.html title='Creative design' desc='Est aperiam ex sint maiores aliquam delectus minima rerum et natus rerum sit quae nostrum.' icon_class='fa fa-flask' delay='0' shape_class='icon-text-circle' %}
+  </div>
+  <div class="medium-3 large-3 columns">
+    {% include icon-text.html title='Creative design' desc='Est aperiam ex sint maiores aliquam delectus minima rerum et natus rerum sit quae nostrum.' icon_class='fa fa-paper-plane-o' delay='200' shape_class='icon-text-circle' %}
+  </div>
+  <div class="medium-3 large-3 columns">
+    {% include icon-text.html title='Creative design' desc='Est aperiam ex sint maiores aliquam delectus minima rerum et natus rerum sit quae nostrum.' icon_class='fa fa-tablet' delay='400' shape_class='icon-text-circle' %}
+  </div>
+  <div class="medium-3 large-3 columns">
+    {% include icon-text.html title='Creative design' desc='Est aperiam ex sint maiores aliquam delectus minima rerum et natus rerum sit quae nostrum.' icon_class='fa fa-comments-o' delay='600' shape_class='icon-text-circle' %}
+  </div>
+</div>
+
+<div class="spacing"></div>
+-->
+
+<div class="full" style="background: #f5f5f5;">
+  <div class="row">
+    <div class="large-12 columns">
+      {% include section-header.html title="Our mission" %}
+      <div class="spacing"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.
+      </p>
+      <div class="three spacing"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      {% include section-header.html title="Our projects" %}
+      <div class="spacing"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.
+      </p>
+      <div class="three spacing"></div>
+    </div>
+  </div>
+
+  <div class="mod modGallery">
+    <ul class="gallery small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+      {% for work in page.works %}
+        <li class="{{ work.klass }}">
+          <a href='{{ work.link_to }}'>
+            <img alt="" src="{{ work.image }}" />
+            <div class='overlay'>
+              <div class='thumb-info'>
+                <h3>{{ work.title }}</h3>
+                <p>{{ work.desc }}</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+
+<div class='full'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      {% include section-header.html title="What we can do" %}
+      <div class='spacing'></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.
+      </p>
+      <div class='three spacing'></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='medium-6 columns'>
+      <img class="fadeinleft" alt="" src="images/@stock/responsive.png" />
+      <div class='three spacing'></div>
+    </div>
+    <div class='medium-6 columns'>
+      {% for service in page.services %}
+        <div class='fadein mod modIconText' data-delay='{{ 300 | times:forloop.index0 }}'>
+          <div class='icon-text-simple'>
+            <i class='fa fa-{{service.icon}}'></i>
+            <h3>{{service.title}}</h3>
+            <p>{{service.desc}}</p>
+          </div>
+          <div class='two spacing'></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class='spacing'></div>
+</div>
+
+
+<div class='full parallax' style='background-image: url(images/@stock/milestone-bg.jpg); color: #fff;'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      {% include section-header.html title="The Numbers" color="#fff" %}
+      <div class='spacing'></div>
+      <p class='centered-text' style='color: #ccc;'>
+        Dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.
+      </p>
+      <div class='two spacing'></div>
+    </div>
+  </div>
+  <div class='row'>
+    {% for milestone in page.milestones %}
+      <div class='medium-3 large-3 columns'>
+        <div class='mod modMilestone'>
+          <i class='fa fa-{{milestone.icon}}'></i>
+          <strong data-from='{{milestone.from}}' data-to='{{milestone.to}}'>&nbsp;</strong>
+          <span>{{milestone.title}}</span>
+          <div class='four spacing'></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class='two spacing'></div>
+</div>
+
+<div class='full'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      {% include section-header.html title="Our team" %}
+      <div class='spacing'></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.
+      </p>
+      <div class='two spacing'></div>
+    </div>
+  </div>
+  <div class='row'>
+    {% for member in site.data.members %}
+      <div class='small-6 medium-3 large-3 columns'>
+        <div class='mod modTeamMember'>
+          <div class='member'>
+            <img class="avatar" alt="" src="{{ member.avatar }}" />
+            <div class='overlay'>
+              <div class='intro'>
+                <h3>{{member.name}}</h3>
+                <p>{{member.position}}</p>
+                <ul class='socials'>
+                  {% for social in member.socials %}
+                    <li>
+                      <a href='{{social.link}}'>
+                        <i class='fa fa-{{social.icon}}'></i>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class='two spacing'></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+  
+{% include our-customers.html %}
+
+
+<div class='full no-padding' style='background: #fff'>
+  <div class='two spacing'></div>
+  <div class='mod modCallToAction'>
+    <div class='row'>
+      <div class='medium-9 large-9 columns'>
+        <p>Like what you see here? Checkout this theme and start to build your site immediately.</p>
+      </div>
+      <div class='medium-3 large-3 columns'>
+        <a class='button' href='http://themeforest.net/user/honryou/portfolio?ref=honryou'>Learn more</a>
+      </div>
+    </div>
+  </div>
+  <div class='spacing'></div>
+</div>

@@ -1,0 +1,33 @@
+
+Devoll - Multi-Purpose Theme powered by Jekyll
+
+Devoll is a creative responsive Jekyll theme for many purposes, it could be used as company, design studio, business or portfolio websites.
+
+h3. Features
+
+* Creative and clean design
+* Fully responsive
+* Parallax Images
+* CSS3 content animations
+* sticky navigation
+* Font Awesome icons
+* Advanced portfolios
+* Many layouts
+* Free updates & support
+* Free Google fonts
+
+
+Fonts
+* Raleway: http://www.google.com/fonts/specimen/Raleway
+
+
+Images(The sample images viewed in the live preview site are not included in your purchased files.)
+* "unsplash":http://unsplash.com
+* "pixeden":http://pixeden.com/
+* "Corepics":http://photodune.net/item/designer-portrait/833538?WT.ac=category_thumb&WT.seg_1=category_thumb&WT.z_author=Corepics
+* "sdeva":http://photodune.net/item/smile/2063538?WT.ac=category_thumb&WT.seg_1=category_thumb&WT.z_author=sdeva
+* "ollyi":http://photodune.net/item/smiling-woman/3716632?WT.oss_phrase=smile%20woman&WT.oss_rank=15&WT.z_author=ollyi&WT.ac=search_thumb
+* "Rido81":http://photodune.net/item/smiling-man/7203958?WT.oss_phrase=smile%20man&WT.oss_rank=38&WT.z_author=Rido81&WT.ac=search_thumb
+* "The stocks": http://thestocks.im/
+* "Freepik":http://www.freepik.com
+

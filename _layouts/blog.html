@@ -1,16 +1,53 @@
 ---
 layout: default
-format: blog-index
-# Don't index these pages dear Google.
-noindex: true
 ---
-<div class="row">
-	<div class="medium-8 columns t30">
-		{% include _pagination.html %}
-	</div><!-- /.medium-7.columns -->
 
 
-	<div class="medium-4 columns t30">
-		{% include _sidebar.html %}
-	</div><!-- /.medium-5.columns -->
-</div><!-- /.row -->
+<div class='full parallax' style='background-image: url({{site.url}}/images/@stock/blog-header-bg.jpg); color: #fff;'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      {% include section-header.html title="Our blog" tagline="Know what we are thinking and doing" color="#fff" class="big" %}
+    </div>
+  </div>
+  <div class='four spacing'></div>
+</div>
+
+
+<div class='full' style='background: #f5f5f5'>
+  <div class='row'>
+    <div class='large-9 columns'>
+
+      {{content}}
+
+      {% if paginator %}
+        <div class="pager">
+          {% if paginator.next_page %}
+            {% if paginator.next_page == 1 %}
+              <a href="/blog" class="older">Older Entries</a>
+            {% else %}
+              <a href="/blog/page{{ paginator.next_page }}" class="older">Older Entries</a>
+            {% endif %}
+          {% else %}
+            <span class="older">Older Entries</span>
+          {% endif %}
+          {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+              <a href="/blog" class="newer">Newer Entries</a>
+            {% else %}
+              <a href="/blog/page{{ paginator.previous_page }}" class="newer">Newer Entries</a>
+            {% endif %}
+          {% else %}
+            <span class="newer">Newer Entries</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+
+      <div class='four spacing'></div>
+    </div>
+    <div class='large-3 columns' id='sidebar'>
+      {% include sidebar.html %}
+      <div class='four spacing'></div>
+    </div>
+  </div>
+</div>

@@ -4,10 +4,10 @@
     <title>Devoll</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Feb 2017 02:40:18 -0600</pubDate>
-    <lastBuildDate>Wed, 01 Feb 2017 02:40:18 -0600</lastBuildDate>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 01 Feb 2017 02:55:12 -0600</pubDate>
+    <lastBuildDate>Wed, 01 Feb 2017 02:55:12 -0600</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -37,8 +37,8 @@
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Apr 2015 05:58:12 -0500</pubDate>
-        <link>http://localhost:4000/logo/development/2015/04/14/make-some-sketches.html</link>
-        <guid isPermaLink="true">http://localhost:4000/logo/development/2015/04/14/make-some-sketches.html</guid>
+        <link>http://localhost:4000//logo/development/2015/04/14/make-some-sketches.html</link>
+        <guid isPermaLink="true">http://localhost:4000//logo/development/2015/04/14/make-some-sketches.html</guid>
         
         
         <category>Logo</category>
@@ -74,8 +74,8 @@
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Apr 2015 05:57:12 -0500</pubDate>
-        <link>http://localhost:4000/design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</guid>
+        <link>http://localhost:4000//design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</link>
+        <guid isPermaLink="true">http://localhost:4000//design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</guid>
         
         
         <category>Design</category>
@@ -111,8 +111,8 @@
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
         <pubDate>Tue, 14 Apr 2015 05:52:12 -0500</pubDate>
-        <link>http://localhost:4000/design/development/2015/04/14/look-what-we-have-done.html</link>
-        <guid isPermaLink="true">http://localhost:4000/design/development/2015/04/14/look-what-we-have-done.html</guid>
+        <link>http://localhost:4000//design/development/2015/04/14/look-what-we-have-done.html</link>
+        <guid isPermaLink="true">http://localhost:4000//design/development/2015/04/14/look-what-we-have-done.html</guid>
         
         
         <category>Design</category>
@@ -141,8 +141,8 @@
 
 </description>
         <pubDate>Tue, 10 Feb 2015 02:19:12 -0600</pubDate>
-        <link>http://localhost:4000/jekyll/update/2015/02/10/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/02/10/welcome-to-jekyll.html</guid>
+        <link>http://localhost:4000//jekyll/update/2015/02/10/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000//jekyll/update/2015/02/10/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

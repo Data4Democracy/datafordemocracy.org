@@ -1,1 +1,8 @@
 .DS_Store
+
+# Thumbnails
+._*
+
+_site/
+.sass-cache/
+.jekyll-metadata

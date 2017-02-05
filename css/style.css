@@ -3826,3 +3826,7 @@ body {
     display: none;
   }
 }
+
+.site-logo{
+  max-width: 30%;
+}

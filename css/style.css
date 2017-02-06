@@ -3839,7 +3839,7 @@ div.clients-section.large-12.columns{
   background: linear-gradient(to top, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   /*background: linear-gradient(to bottom, rgba(1, 0, 0, 0), rgba(2, 0, 0, 0));*/
-  padding: 2rem 0;
+  padding: 2rem 3rem;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
@@ -3853,34 +3853,20 @@ div.clients-section2.large-12.columns{
   /*padding: 2rem 0;*/
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  padding-bottom: 2rem;
+  padding: 0 3rem 3rem;
 }
 
 div.clients-section.large-12.columns p{
   max-width: 55rem;
   margin: auto;
   font-size: 1.15rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 300px){
   div.clients-section.large-12.columns p{
-    max-width: 55rem;
-    margin: auto;
-    font-size: 1.15rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+
   }
 
-}
-div.clients .slick-prev{
-  padding-left: 20px;
-  font-size: 2rem;
-}
-
-div.clients .slick-next{
-  padding-right: 40px;
-}
-
-div.clients.button.slick-prev{
-  color: black;
 }

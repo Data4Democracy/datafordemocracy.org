@@ -252,7 +252,7 @@ jQuery(document).foundation();
 
       $('.slides', $ctx).slick({
         autoplay: true,
-        pauseOnHover: false,
+        pauseOnHover: true,
         dots: true,
         speed: 1500,
         arrows: false
@@ -329,9 +329,10 @@ jQuery(document).foundation();
       $('.clients', $ctx).slick({
         slidesToShow: slides_to_show,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
-        pauseOnHover: false,
+        pauseOnHover: true,
+        arrows: true,
         responsive: [
           {
             breakpoint: 767,
@@ -745,10 +746,10 @@ jQuery(document).foundation();
   })
 })(Tc.$);
 (function($) {
-  Tc.Module.SectionHeader = Tc.Module.extend({    
+  Tc.Module.SectionHeader = Tc.Module.extend({
     init: function($ctx, sandbox, modId) {
       this._super($ctx, sandbox, modId);
-    },    
+    },
     dependencies: function() {
     },
     onBinding: function() {
@@ -787,15 +788,13 @@ jQuery(document).foundation();
       }
 
       $('.items', $ctx).slick({
-        autoplay: true,
+        autoplay: false,
         pauseOnHover: false,
         dots: show_dots,
         speed: 1500,
-        arrows: false
+        arrows: true
       });
 
     }
   })
 })(Tc.$);
-
-

@@ -3857,11 +3857,21 @@ div.clients-section2.large-12.columns{
 }
 
 div.clients-section.large-12.columns p{
-  max-width: 55em;
+  max-width: 55rem;
   margin: auto;
   font-size: 1.15rem;
 }
 
+@media only screen and (max-width: 600px){
+  div.clients-section.large-12.columns p{
+    max-width: 55rem;
+    margin: auto;
+    font-size: 1.15rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
 div.clients .slick-prev{
   padding-left: 20px;
   font-size: 2rem;

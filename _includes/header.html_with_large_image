@@ -4,7 +4,7 @@
       <li class='name'>
         <h1>
           <a href='{{site.url}}/index.html'>
-            <img alt="Data For Democracy Logo" src="{{site.url}}/images/data-dem-logo-stacked-grey.png" />
+            <img class="site-logo" alt="Data For Democracy Logo" src="{{site.url}}/images/data-dem-logo-stacked-grey.png" />
           </a>
         </h1>
       </li>

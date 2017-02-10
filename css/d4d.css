@@ -1,0 +1,20 @@
+p {
+	font-size: 1.4rem;
+}
+
+.f-topbar-fixed.shrink .top-bar .title-area img, .f-topbar-fixed.shrink .top-bar .title-area li img, .f-topbar-fixed.shrink .top-bar .title-area a img {
+    width: 55%;
+}
+
+.bg-dark {
+	background: #222;
+}
+
+.slick-prev {
+	left: -12px;
+}
+
+.slick-next {
+	right: -12px;
+}
+

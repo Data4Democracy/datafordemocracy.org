@@ -20,10 +20,10 @@ testimonials:
     author: David White, Designer at Huglab
 ---
 
-<div class='full parallax' style='background-image: url(images/@stock/about-us.jpg); color: #fff;'>
+<div class='full parallax' style='background-image: url(images/banners/hero-crowd.png); color: #fff;'>
   <div class='row'>
     <div class='twelve columns'>
-      {% include section-header.html title="About us" color="#fff" tagline="Know something about our team" class="big" %}
+      {% include section-header.html title="About us" color="#fff" tagline="" class="big" %}
     </div>
   </div>
   <div class='four spacing'></div>
@@ -31,31 +31,35 @@ testimonials:
 
 <div class='full'>
   <div class='row'>
-    <div class='medium-6 columns'>
-      <h3>Our history</h3>
-      <p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing.</p>
+    <div class='twelve columns'>
+      <h3>Our mission</h3>
+      <p>Data for Democracy brings together an active, passionate community of people using data to drive better decisions and improve the world in which we live.</p>
     </div>
-    <div class='medium-6 columns'>
-      <h3>Our skills</h3>
-      <div class='mod modBarGraph'>
-        <ul class='bars'>
-          {% for skill in page.skills %}
-            <li>
-              <h4 style=''>
-                {{skill.title}}
-                <strong>{{skill.percentage}}%</strong>
-              </h4>
-              <p class='highlighted' data-percent='{{skill.percentage}}'></p>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+    <div class='twelve columns'>
+      <h3>Our story</h3>
+      <p>Data for Democracy began as an experiment in December 2016, when people from around the world began to collaborate on data-related problems solely through Slack messages and GitHub commits. With no rules or formal organizational structure, the focus was on getting real and impactful work done with minimal delay.</p>
+      <p>As of February 2017, the community is based on Slack and <a href="https://github.com/data4democracy" >GitHub</a>. It has increased to over 700 volunteers spanning a wide range of locations and timezones, and continues to grow every day. These volunteers apply their diverse skills and interests to an equally varied array of projects.</p>
+      <p>With the expansion of Data For Democracy, we're working to develop a more cohesive structure and set of guidelines to better support volunteers in learning, working, and leading projects while remaining committed to our mission of producing data projects that have a positive and tangible impact on the world.</p>
+    </div>
+    <div class='twelve columns'>
+      <h3>Our goals</h3>
+      <p>* To produce objective, rigorous data analysis that keeps people informed and engaged, and supports them in forming their independent opinions.</p>
+      <p>* To connect with communities and partners that contribute to positive social change, and help equip them with the tools and technology to support the work they are already doing.</p>
+      <p>* To make data science transparent and accessible to a wider audience, and create opportunities for passionate and socially conscious people to get involved with using data to serve the public good.</p>
     </div>
   </div>
 </div>
 
+<div class='full'>
+  <div class='row'>
+    <div class='medium-6 columns'>
+      <img class="fadeinleft" alt="" src="images/d4dmap.png" />
+      <div class='three spacing'></div>
+    </div>
+  </div>
+</div>
 
+<!--
 <div class='full'>
   <div class='row'>
     {% for member in site.data.members %}
@@ -124,4 +128,5 @@ testimonials:
   </div>
 </div>
 
-{% include our-customers.html %}
+{% include our-partners.html %}
+-->

@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Partnerships"
+subheadline: ""
+teaser: ""
+permalink: "/partners/"
+header: Partnerships
+---
+At Data for Democracy, we believe in the mantra "teamwork makes the dream work". While many of our projects are initiated and driven by our own community members, we also actively work with external partners to support their missions of achieving social change. These partnerships help to keep our community energized, and further our goal of matching our volunteers' skillsets with real-world problems.
+
+#Who Our Partners Are
+Our partnerships run the gamut from government agencies to private organizations. For instance, we have one group working closely with the City of Boston to help develop a model aimed at [predicting car crashes](https://github.com/Data4Democracy/boston-crash-modeling), while another team is working with ProPublica to analyze [patterns in congressional spending](https://github.com/Data4Democracy/house_expenditures).
+
+This is only a small sample of our interests. We're always on the look out for any challenging and socially conscious projects, so if you have a problem to solve, question to answer, or idea to build that you think might be a good fit for us, we'd love to hear from you!
+
+#Why We Partner
+As a community of like-minded data scientists and technologists, we are constantly looking for creative ways to apply our trade, and partnerships offer us more opportunities to do so. Just as importantly, we want to help build a stronger society, and partnerships connect us with people and organizations who are already doing meaningful and critical work in effecting social change. Through these collaborations, we can ensure that we are productively applying our abilities in the right direction to maximize our impact.
+
+#How We Partner
+Collaboration is our watchword, here as in all other aspects of our work. We work closely with our Partners to ensure that the work done is the work that is most needed. We recognize and value our Partners' knowledge about the subject areas and about the problems that they wish to solve, and we benefit from their insight in every stage of the process as we work to solve these problems.
+
+For each project, we assign a leadership within Data for Democracy, with one or more analysts identified as Leads for each project. These Leads will work closely to understand our Partner's needs, and will communicate those needs to the broader team in the form of required tasks. Facilitators will work with these Leads to create a feedback loop with the Partner and ensure that communication flows regularly and smoothly.
+
+We also encourage our Partners to be active members in our Slack instance, especially in the channels specific to their project! This allows our Partners to check in and provide feedback wherever (and whenever) they feel is necessary, thus enabling work to progress more satisfactorily for all parties.
+
+Once again, if you have a problem that you want solved, feel free to reach out to us! We would love the chance to talk to you about it, and see how we can help you and your team.

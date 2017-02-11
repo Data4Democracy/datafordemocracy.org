@@ -1,0 +1,20 @@
+---
+layout: page
+title: "About"
+subheadline: ""
+teaser: ""
+permalink: "/about/"
+header: About Us
+---
+#Our Mission
+Data For Democracy brings together an active, passionate community of people using data to drive better decisions and improve the world we live in.
+
+#Our Origin Story
+Data For Democracy began as an experiment in December 2017, when people from around the world began to collaborate on data-related problems solely through Slack messages and GitHub commits. With no rules or formal organizational structure, the focus was on getting real and impactful work done with minimal delay.
+As of February 2017, the community is still based on [Slack](https://datafordemocracy.slack.com/) and [GitHub](https://github.com/data4democracy). It has increased to over 700 volunteers spanning a wide range of locations and timezones, and it continues to grow every day. These volunteers apply their diverse skills and interests to an equally varied array of projects.
+With the expansion of Data For Democracy, we're working to develop a more cohesive structure and set of guidelines to better support volunteers in learning, working, and leading projects. However, we remain committed to our mission of producing data projects that have a positive and tangible impact on the world.
+
+#Our Goals
+* To produce objective, rigorous data analysis that keeps people informed and engaged, and supports them in forming their independent opinions.
+* To connect with communities and partners that contribute to positive social change, and help equip them with the tools and technology to support the work they are already doing.
+* To make data science transparent and accessible to a wider audience, and create opportunities for passionate and socially conscious people to get involved with using data to serve the public good.

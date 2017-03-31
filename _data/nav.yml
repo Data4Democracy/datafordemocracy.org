@@ -16,3 +16,6 @@
 - name: Blog
   url: https://medium.com/data-for-democracy
   section_id: blog
+- name: Hackathon
+  path: hackathon.html
+  section_id: hackathon

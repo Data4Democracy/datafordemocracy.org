@@ -1,0 +1,44 @@
+{% extends 'home/base.html' %}
+{% block title %}Data for Democracy{% endblock %}
+{% block home-bt %}active{% endblock %}
+
+{% block body %}
+
+
+<!-- Content -->
+<div class="container text-center">
+    <h3>What We Do</h3><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <h2 class="font-size-h6 t10">Data for Democracy</h2>
+            <p>Data people have a lot to offer. We’re driven by a passion to find the truth.
+            We understand how information can be used to make better decisions and improve our communities.
+            </p>
+            <form action="{% url 'home:about' %}">
+                <input type="submit" class="btn btn-primary" value="More">
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <h2 class="font-size-h6 t10">Active Projects</h2>
+            <p>Write some words about how many ongoing projects we have, maybe highlighting something new and/or exciting.
+                Make the image something interesting from a project.
+            </p>
+            <form action="{% url 'home:projects' %}">
+                <input type="submit" class="btn btn-primary" value="More">
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <h2 class="font-size-h6 t10">Technology Partners</h2>
+            <p>Make the image a collage of their logos. Write some words about how awesome people like supporting our work.
+                We can link from here or link from the tech_partners page.
+            </p>
+            <form action="{% url 'home:about' %}">
+                <input type="submit" class="btn btn-primary" value="More">
+            </form>
+        </div>
+    </div><br>
+    <form action="{% url 'home:contactus' %}">
+        <input type="submit" class = "btn btn-danger btn-lg" value="Join Us">
+    </form>
+</div><br>
+{% endblock %}

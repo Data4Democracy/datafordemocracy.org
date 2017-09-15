@@ -10,9 +10,20 @@
 - name: Partners
   path: partners.html
   section_id: partners
+  children:
+    - name: Local
+      path: local.html
+      section_id: local
 - name: In the News
   path: inthenews.html
   section_id: in-the-news
+  children:
+    - name: News
+      path: news.html
+      section_id: news
+    - name: Newsletters
+      path: inthenews/newsletters.html
+      section_id: newsletters
 - name: Contact
   path: contact.html
   section_id: contact

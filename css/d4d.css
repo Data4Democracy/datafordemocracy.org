@@ -18,3 +18,14 @@ p {
 	right: -12px;
 }
 
+a:hover{
+	color: #FF0033;
+}
+
+a:active{
+	color: #FF0033;
+}
+
+a{
+	color:#cc0028;
+}

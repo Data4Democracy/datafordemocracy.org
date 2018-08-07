@@ -1,0 +1,42 @@
+---
+layout: default
+title: Pledge
+section_id: pledge
+---
+
+
+<div class='full parallax' style='background-image: url(images/banners/hero-city.png); color: #fff;'>
+  <div class='row'>
+    <div class='large-12 columns'>
+      {% include section-header.html title="Data Ethics Pledge" tagline="" color="#fff" class="big" %}
+    </div>
+  </div>
+  <div class='four spacing'></div>
+</div>
+
+    <div class='mod modGallery'>
+    
+
+      <ul class='gallery large-block-grid-4 medium-block-grid-3 small-block-grid-2'>
+
+        {% for work in page.works %}
+          <li class="{{ work.klass }}">
+            <a href='{{ work.link_to }}'>
+              <img alt="" src="{{ work.image }}" />
+              <div class='overlay'>
+                <div class='thumb-info'>
+                  <h3>{{ work.title }}</h3>
+                  <p>{{ work.desc }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
+  </div>
+
+  <div class='four spacing'></div>
+</div>

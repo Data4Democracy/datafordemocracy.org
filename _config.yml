@@ -14,3 +14,6 @@ markdown: kramdown
 
 paginate: 3
 paginate_path: "blog/page:num"
+
+plugins_dir:
+  - jekyll-redirect-from

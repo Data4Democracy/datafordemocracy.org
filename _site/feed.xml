@@ -6,9 +6,290 @@
 </description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 Sep 2017 18:12:57 -0400</pubDate>
-    <lastBuildDate>Fri, 15 Sep 2017 18:12:57 -0400</lastBuildDate>
-    <generator>Jekyll v3.4.0</generator>
+    <pubDate>Fri, 28 Jun 2019 15:45:26 -0700</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 15:45:26 -0700</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Building a Slackbot</title>
+        <description>&lt;h1 id=&quot;building-a-slackbot-with-hubot&quot;&gt;Building a Slackbot with Hubot&lt;/h1&gt;
+
+&lt;p&gt;A chatbot is an invaluable tool for a growing community. Through this article we will go over how to get started with a powerful chatbot framework called hubot. We will then go over how to write commands and a welcome message tailored to your community. Then, after we have everything just how we want it we will add our bot to a slack workspace and deploy it to Heroku. This is written with a beginner in mind so if you are unfamiliar with any of this technology we will be going over it in a way that has a total beginner in mind.&lt;/p&gt;
+
+&lt;p&gt;You will need to begin by installing node.js if you have not. You can find the file here &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;https://nodejs.org/en/download/&lt;/a&gt;. Once you have node installed you will need npm, you can open your terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install install&lt;/code&gt; to get npm. The last thing you will need to install is a package called yo which is used to create a hubot. You will need to run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g yo generator-hubot&lt;/code&gt; for this. You can learn more about “yo” here &lt;a href=&quot;https://yeoman.io/&quot;&gt;https://yeoman.io/&lt;/a&gt;. Now that we have our requirements installed we are ready to begin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../../images/blog/Screen_Shot_2019-03-26_at_7-84e55fe7-ac00-463f-a02c-197765cdf352.40.45_AM.png&quot; alt=&quot;Screenshot&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To create a new hubot you will need to run the command &lt;code class=&quot;highlighter-rouge&quot;&gt;yo hubot --adapter=slack&lt;/code&gt; in your terminal. Make sure you are in the directory you would like the bot created in when you run this command. You will then be asked a series of questions. The only really important one here is when you are prompted for the bot adapter, make sure slack is selected. This is just to help our bot communicate with the Slack api. After the install is completed you will just be left with your folder, but now it is full of things that help hubot to run. Lets open this folder in an IDE to continue.&lt;/p&gt;
+
+&lt;p&gt;Once we have this  open in our text editor we should see a folder structure like this.&lt;/p&gt;
+
+&lt;p&gt;If you view the &lt;a href=&quot;http://readme.md&quot;&gt;README.md&lt;/a&gt; you will find information on getting the bot started and helpful tips and resources.&lt;/p&gt;
+
+&lt;p&gt;For the purposes of this guide we will be working in the &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt; folder. You can refer to the hubot docs for clarification on the other files. &lt;a href=&quot;https://hubot.github.com/docs/&quot;&gt;https://hubot.github.com/docs/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../../images/blog/Screen_Shot_2019-03-26_at_2-fdd3b784-cafc-4b10-a905-7504753781a8.32.30_PM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;built-in-help&quot;&gt;Built in Help&lt;/h3&gt;
+
+&lt;p&gt;We will begin our exploration of hubot by opening the scripts folder and then the &lt;code class=&quot;highlighter-rouge&quot;&gt;example.coffee&lt;/code&gt; file. This file is a great way to familiarize yourself with hubot. The majority of this file is commented out by default to prevent these commands to run, but each one presents a different function of hubot. I would recommend spending time reading over these files, just by reading over you can start to get an idea of how hubot works.&lt;/p&gt;
+
+&lt;h2 id=&quot;breaking-down-a-hubot-script&quot;&gt;Breaking down a hubot script&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 1 - Description&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;At the top of the file you will see 9 lines of commented out code. This is an important format to take note of because you can use this to generate your help commands later.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Description:
+#   Example scripts for you to examine and try out.
+#
+# Notes:
+#   They are commented out by default, because most of them are pretty silly and
+#   wouldn't be useful and amusing enough for day to day huboting.
+#   Uncomment the ones you want to try and experiment with.
+#
+#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+
+module.exports = (robot) -&amp;gt;
+
+   robot.hear /badger/i, (res) -&amp;gt;
+     res.send &quot;Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 2 - export&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Next you will see &lt;code class=&quot;highlighter-rouge&quot;&gt;module.exports = (robot) →&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This command is in the script file to export the what is inside so that hubot can use it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 3 - functions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Next you will see a simple function. Lets break it down into smaller parts.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;robot.hear&lt;/code&gt; allows our robot to hear what is going on in the room it is in.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/badger/i,&lt;/code&gt; This is what the robot is listening for.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;res.send&lt;/code&gt; this is the response that our robot will send when it hears what we are listening for.&lt;/p&gt;
+
+&lt;p&gt;Using these basic pieces we have enough information to create all the keyword commands that we want.  Lets get started by creating a new file named &lt;code class=&quot;highlighter-rouge&quot;&gt;commands.coffee&lt;/code&gt; inside our scripts folder.&lt;/p&gt;
+
+&lt;p&gt;Next we will add our description.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Description:
+#   To demonstrate basic keyword commands
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot hello - Say hello!
+#   hubot !new members - link to procedure for new members.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next we need our export and function.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = (robot) -&amp;gt;
+	robot.hear /hello/i, (res) -&amp;gt;
+		res.send &quot;Hello World&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This function will listen for anyone to say hello and then say “Hello World”&lt;/p&gt;
+
+&lt;p&gt;One way to keep your content up to date is to manage it on a platform like Notion, Github, or Google Docs and then link to that document. This will encourage collaboration and allow you to change your content without having to update your bot.&lt;/p&gt;
+
+&lt;p&gt;Lets create a function so that whenever our bot hears “!new members” it will send a link that provides all the information for new members to get started.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = (robot) -&amp;gt;
+	robot.hear /!new members/i, (res) -&amp;gt;
+		res.send &quot;https://www.notion.so/dstarling/Click-me-if-you-like-being-informed-b5e1968173684dfd908f4a85c91ef6e7&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point it would nice to be able to test these commands and make sure everything is working. To do this you will need to open a terminal and navigate to the folder you ran you &lt;code class=&quot;highlighter-rouge&quot;&gt;yo hubot&lt;/code&gt; command inside. Run the command &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/hubot&lt;/code&gt; to run a test bot to check your code. You should see something like this. Don’t worry about the errors, they will not affect what we are doing.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;body-parser deprecated undefined extended: provide extended option node_modules/hubot/src/robot.js:447:21
+hubotblog&amp;gt; [Tue Mar 26 2019 16:29:57 GMT-0700 (Mountain Standard Time)] WARNING Loading scripts from hubot-scripts.json is deprecated and will be removed in 3.0 (https://github.com/github/hubot-scripts/issues/1113) in favor of packages for each script.
+
+Your hubot-scripts.json is empty, so you just need to remove it.
+[Tue Mar 26 2019 16:29:57 GMT-0700 (Mountain Standard Time)] INFO hubot-redis-brain: Using default redis on localhost:6379
+[Tue Mar 26 2019 16:29:57 GMT-0700 (Mountain Standard Time)] ERROR hubot-heroku-keepalive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s | grep web.url | cut -d= -f2)`
+
+hubotblog&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we have hubot terminal we can use. Lets say “Hello.”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hubotblog&amp;gt; Hello
+hubotblog&amp;gt; Hello World
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Great! Our bot has responded to us. Lets try our keyword command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hubotblog&amp;gt; !new members
+hubotblog&amp;gt; https://www.notion.so/dstarling/Click-me-if-you-like-being-informed-b5e1968173684dfd908f4a85c91ef6e7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we want to make sure someone can find these commands, lets test our help command. Notice I am using “hubotblog help” this is the name I used when creating my bot, you will need to refer to your bot with the name you used. If you are not sure, you can find your bot’s name in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hubotblog&amp;gt; hubotblog help
+hubotblog&amp;gt; hubotblog !new members - link to procedure for new members.
+hubotblog adapter - Reply with the adapter
+hubotblog animate me &amp;lt;query&amp;gt; - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
+hubotblog echo &amp;lt;text&amp;gt; - Reply back with &amp;lt;text&amp;gt;
+hubotblog hello - Say hello!
+hubotblog help - Displays all of the help commands that this bot knows about.
+hubotblog help &amp;lt;query&amp;gt; - Displays all help commands that match &amp;lt;query&amp;gt;.
+hubotblog image me &amp;lt;query&amp;gt; - The Original. Queries Google Images for &amp;lt;query&amp;gt; and returns a random top result.
+hubotblog map me &amp;lt;query&amp;gt; - Returns a map view of the area returned by `query`.
+hubotblog mustache me &amp;lt;url|query&amp;gt; - Adds a mustache to the specified URL or query result.
+hubotblog ping - Reply with pong
+hubotblog pug bomb N - get N pugs
+hubotblog pug me - Receive a pug
+hubotblog the rules - Make sure hubot still knows the rules.
+hubotblog time - Reply with current time
+hubotblog translate me &amp;lt;phrase&amp;gt; - Searches for a translation for the &amp;lt;phrase&amp;gt; and then prints that bad boy out.
+hubotblog translate me from &amp;lt;source&amp;gt; into &amp;lt;target&amp;gt; &amp;lt;phrase&amp;gt; - Translates &amp;lt;phrase&amp;gt; from &amp;lt;source&amp;gt; into &amp;lt;target&amp;gt;. Both &amp;lt;source&amp;gt; and &amp;lt;target&amp;gt; are optional
+ship it - Display a motivation squirrel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You will see we have our new functions returned here with the help command. What you may not have expected is all the other stuff. Most of these are external-scripts that are included with hubot. We will go over those later in this article. What is important is we have built two commands that work and are documented with our help command.&lt;/p&gt;
+
+&lt;p&gt;Next we will need to construct our welcome function to do this we will need to learn a few new things. Lets look at an example from the &lt;code class=&quot;highlighter-rouge&quot;&gt;example.coffee&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
+leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
+
+robot.enter (res) -&amp;gt;
+	res.send res.random enterReplies
+robot.leave (res) -&amp;gt;
+	  res.send res.random leaveReplies
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first thing you may notice is that we have an array for &lt;code class=&quot;highlighter-rouge&quot;&gt;enterReplies&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;leaveReplies&lt;/code&gt; . We can use these to hold text that we will later use. Next you will notice we see &lt;code class=&quot;highlighter-rouge&quot;&gt;robot.enter&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;robot.hear&lt;/code&gt; , what this is doing is waiting for someone to join a channel to trigger the robots response. So in this example when someone enters a channel the bot will evoke a response from the &lt;code class=&quot;highlighter-rouge&quot;&gt;enterReplies&lt;/code&gt; array. We will be using a very similar function to create our welcome message.&lt;/p&gt;
+
+&lt;p&gt;To begin we will create a new file named &lt;code class=&quot;highlighter-rouge&quot;&gt;welcome.coffee&lt;/code&gt; inside our scripts folder. We will start by creating our description.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Description:
+#   To welcome new members to the community
+#
+# Dependencies:
+#   None
+#
+# Configuration:
+#   None
+#
+# Commands:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next lets construct our welcome message.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = (robot) -&amp;gt;
+	robot.enter (res) -&amp;gt;
+		res.reply &quot;Hello and welcome&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we see a something new &lt;code class=&quot;highlighter-rouge&quot;&gt;res.reply&lt;/code&gt;. This is like &lt;code class=&quot;highlighter-rouge&quot;&gt;res.send&lt;/code&gt; but it replies to the person that triggered the event. We will be using this to help us make this a private message directly to the user that triggers the event.&lt;/p&gt;
+
+&lt;p&gt;To test this behavior it will be best to create our own slack workspace to test our bot out. You will need to start by going to &lt;a href=&quot;https://slack.com/&quot;&gt;https://slack.com/&lt;/a&gt; and creating a new workspace. Once you have a workspace you can go into your administration settings, and search the app directory for hubot. This will allow you get generate an api key for your slack to use with your hubot. You can find an in-depth guide for this process here &lt;a href=&quot;https://slack.dev/hubot-slack/&quot;&gt;https://slack.dev/hubot-slack/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One we have the api key we can pass it to our bot. We do this in our terminal while starting the bot. &lt;code class=&quot;highlighter-rouge&quot;&gt;HUBOT_SLACK_TOKEN=PASTE_YOUR_SLACK_TOKEN_HERE ./bin/hubot --adapter slack&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You should see your bot come online in your slack workspace, try messaging it and say “hello” you should see a reply of “Hello World.” Lets try our enter command. Create a channel name onboarding and use &lt;code class=&quot;highlighter-rouge&quot;&gt;/invite @botname&lt;/code&gt; . This will add the bot to the channel. Now you can leave the channel and rejoin. If everything is working you should be greeted with “Hello and Welcome”. Great! We are almost there.&lt;/p&gt;
+
+&lt;p&gt;Next we will need to isolate this message to only be triggered in the onboarding channel, and turn the message into a private direct message. To do this we will need the room id. This is a code assigned to every slack channel. You can find it on your url. Navigate to the channel you want the bot in and look at your url. It will look similar to this. &lt;a href=&quot;https://dstarlingdevelopment.slack.com/messages/CGMQQ9GSG/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://dstarlingdevelopment.slack.com/messages/CGMQQ9GSG/&lt;/code&gt;&lt;/a&gt;. What we need is the code between the last slashes &lt;code class=&quot;highlighter-rouge&quot;&gt;CGMQQ9GSG&lt;/code&gt;. We will add this to to our &lt;a href=&quot;http://welcome.coffee&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;welcome.coffee&lt;/code&gt;&lt;/a&gt; file to isolate this trigger to the #onboarding channel.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module.exports = (robot) -&amp;gt;
+  conversationId = &quot;CGMQQ9GSG&quot;
+  robot.enter (res) -&amp;gt;
+    if res.message.room == conversationId
+      enterReply = &quot;This is a private onboarding message.&quot;
+      room = robot.adapter.client.rtm.dataStore.getDMByName res.message.user.name
+      robot.messageRoom room.id, enterReply
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets break this new function down so we can understand all the new parts. We added the &lt;code class=&quot;highlighter-rouge&quot;&gt;conversationId&lt;/code&gt; which is just the id of the channel we want this command confined to. Then add an &lt;em&gt;if&lt;/em&gt; conditional to the &lt;em&gt;robot.enter&lt;/em&gt; statement.&lt;/p&gt;
+
+&lt;p&gt;We have also moved the reply into a variable to make the code a bit more clean. Next we have defined the room. With hubot you can think of a room as the channel as message takes place in. It’s important to note that private messages also have a room.id even though it is a private message. &lt;code class=&quot;highlighter-rouge&quot;&gt;robot.adapter.client.rtm.dataStore.getDMByName&lt;/code&gt; this is from the slack api and allows us to create a room with the the bot and user in it.&lt;/p&gt;
+
+&lt;p&gt;Once we have that we can use &lt;code class=&quot;highlighter-rouge&quot;&gt;robot.messageRoom room.id&lt;/code&gt; to open a direct private message and then enter our reply with &lt;code class=&quot;highlighter-rouge&quot;&gt;enterReply&lt;/code&gt;. Restart your bot in the terminal and test it out. If you join your #onboarding channel and get a direct message from your bot everything is working.&lt;/p&gt;
+
+&lt;p&gt;You should be able to reply to this message with the “help” command to see a full list of commands. Some of these may look unfamiliar, but they come from some external scripts that are included with the hubot bundle.&lt;/p&gt;
+
+&lt;h2 id=&quot;external-scripts&quot;&gt;External Scripts&lt;/h2&gt;
+
+&lt;p&gt;External scripts are simply scripts written by other people people and published to the npm registry. Some are very complex and powerful, other are simple, fun, or silly. Most of these are very easy to get started. You can find the most complete list of these here &lt;a href=&quot;https://www.npmjs.com/search?q=hubot&quot;&gt;https://www.npmjs.com/search?q=hubot&lt;/a&gt;. If you open your &lt;code class=&quot;highlighter-rouge&quot;&gt;external-scripts.json&lt;/code&gt; file you should see something like this.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[
+  &quot;hubot-diagnostics&quot;,
+  &quot;hubot-help&quot;,
+  &quot;hubot-heroku-keepalive&quot;,
+  &quot;hubot-google-images&quot;,
+  &quot;hubot-google-translate&quot;,
+  &quot;hubot-pugme&quot;,
+  &quot;hubot-maps&quot;,
+  &quot;hubot-redis-brain&quot;,
+  &quot;hubot-rules&quot;,
+  &quot;hubot-shipit&quot;
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;These are all the external scripts that are bundled with hubot. Lets try one of them out real quick. We are going to test the &lt;code class=&quot;highlighter-rouge&quot;&gt;hubot-pugme&lt;/code&gt; script. You can find information on it here &lt;a href=&quot;https://www.npmjs.com/package/hubot-pugme&quot;&gt;https://www.npmjs.com/package/hubot-pugme&lt;/a&gt;. If we activate our test environment and type &lt;code class=&quot;highlighter-rouge&quot;&gt;hubot pug me&lt;/code&gt; we should see a link returned. Remember to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;hubot&lt;/code&gt; with the name of your bot. This is how easy many external scripts are to setup. Browse the npm registry to find a package that suits your needs then:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i package-name-here&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the script name to the &lt;code class=&quot;highlighter-rouge&quot;&gt;external-scripts.json&lt;/code&gt; file.&lt;/p&gt;
+
+    &lt;p&gt;[
+    “hubot-pugme”
+  ]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Read the documentation to learn the keywords and and additional setup that is required for more complex scripts.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Get started by exploring the included scripts by default and once you are comfortable you can start adding your own.&lt;/p&gt;
+
+&lt;h2 id=&quot;deployment&quot;&gt;Deployment&lt;/h2&gt;
+
+&lt;p&gt;To deploy your bot, you will need a Heroku account. There are other options, but Heroku is very easy to get running with a few simple commands, and has a free tier. Once you have a heroku account, install the CLI tools found here: &lt;a href=&quot;https://devcenter.heroku.com/articles/heroku-cli&quot;&gt;https://devcenter.heroku.com/articles/heroku-cli&lt;/a&gt;. If you have homebrew you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;brew tap heroku/brew &amp;amp;&amp;amp; brew install heroku&lt;/code&gt; .&lt;/p&gt;
+
+&lt;p&gt;Once this is installed you will  be able to open a terminal in your root project directory and type &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku login&lt;/code&gt; . This will take you through a login process to use the CLI tools.&lt;/p&gt;
+
+&lt;p&gt;Once this is complete you will need git in your project. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt; then you can &lt;code class=&quot;highlighter-rouge&quot;&gt;git add .&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;initial commit&quot;&lt;/code&gt; . You will need to create a repo on github for the bot then you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;git remote add origin [https://github.com/Dstar4/example.git](https://github.com/Dstar4/example.git)&lt;/code&gt; to set this as the project repository. From here you can &lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin master&lt;/code&gt; .&lt;/p&gt;
+
+&lt;p&gt;Next we will want to push our project to Heroku. To do this we will need to set our api key for slack into our Heroku config.&lt;/p&gt;
+
+&lt;p&gt;First we will create our Heroku project with &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku create&lt;/code&gt; . Then &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku config:set HUBOT_SLACK_TOKEN=PASTE_YOUR_SLACK_TOKEN_HERE&lt;/code&gt; . At this point everything should be ready, use &lt;code class=&quot;highlighter-rouge&quot;&gt;git push heroku master&lt;/code&gt; to deploy your bot. At this point if everything went right you should see your bot come online in your slack  channel.&lt;/p&gt;
+
+&lt;p&gt;If you encounter problems, make sure to look at the heroku logs with &lt;code class=&quot;highlighter-rouge&quot;&gt;heroku logs&lt;/code&gt; , this will give you a better idea what is wrong.&lt;/p&gt;
+
+&lt;p&gt;This is a good resource for deployment as well &lt;a href=&quot;https://hubot.github.com/docs/deploying/heroku/&quot;&gt;https://hubot.github.com/docs/deploying/heroku/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;From here you have the skills you need to continue improving your bot and your community as a byproduct of that. Deployment can be tough, but just remember to read the logs and google the errors if you need to.&lt;/p&gt;
+
+&lt;p&gt;You can find the full repo for this project here: &lt;a href=&quot;https://github.com/Dstar4/hubotBlog&quot;&gt;https://github.com/Dstar4/hubotBlog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you run into trouble you can find me on twitter &lt;a href=&quot;https://twitter.com/Dstar3248&quot;&gt;https://twitter.com/Dstar3248&lt;/a&gt; Feel free to send me a message and I will try and help out. Thanks for reading and enjoy your bot creation!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Apr 2019 02:49:00 -0700</pubDate>
+        <link>http://localhost:4000//slackbot/2019/04/02/building-a-slackbot.html</link>
+        <guid isPermaLink="true">http://localhost:4000//slackbot/2019/04/02/building-a-slackbot.html</guid>
+        
+        
+        <category>Slackbot</category>
+        
+      </item>
     
       <item>
         <title>Make some sketches</title>
@@ -36,7 +317,7 @@
 
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
-        <pubDate>Tue, 14 Apr 2015 06:58:12 -0400</pubDate>
+        <pubDate>Tue, 14 Apr 2015 03:58:12 -0700</pubDate>
         <link>http://localhost:4000//logo/development/2015/04/14/make-some-sketches.html</link>
         <guid isPermaLink="true">http://localhost:4000//logo/development/2015/04/14/make-some-sketches.html</guid>
         
@@ -73,7 +354,7 @@
 
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
-        <pubDate>Tue, 14 Apr 2015 06:57:12 -0400</pubDate>
+        <pubDate>Tue, 14 Apr 2015 03:57:12 -0700</pubDate>
         <link>http://localhost:4000//design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</link>
         <guid isPermaLink="true">http://localhost:4000//design/bussiness/2015/04/14/a-cup-of-coffee-for-you.html</guid>
         
@@ -110,7 +391,7 @@
 
 &lt;p&gt;Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate&lt;/p&gt;
 </description>
-        <pubDate>Tue, 14 Apr 2015 06:52:12 -0400</pubDate>
+        <pubDate>Tue, 14 Apr 2015 03:52:12 -0700</pubDate>
         <link>http://localhost:4000//design/development/2015/04/14/look-what-we-have-done.html</link>
         <guid isPermaLink="true">http://localhost:4000//design/development/2015/04/14/look-what-we-have-done.html</guid>
         
@@ -140,7 +421,7 @@
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 10 Feb 2015 03:19:12 -0500</pubDate>
+        <pubDate>Tue, 10 Feb 2015 01:19:12 -0700</pubDate>
         <link>http://localhost:4000//jekyll/update/2015/02/10/welcome-to-jekyll.html</link>
         <guid isPermaLink="true">http://localhost:4000//jekyll/update/2015/02/10/welcome-to-jekyll.html</guid>
         

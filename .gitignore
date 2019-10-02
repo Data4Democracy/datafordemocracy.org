@@ -1,6 +1,7 @@
 *.DS_Store
 # Thumbnails
 ._*
+.vscode/
 
 _site
 
@@ -9,3 +10,5 @@ _site/
 .jekyll-metadata
 
 _site/*
+
+vendor

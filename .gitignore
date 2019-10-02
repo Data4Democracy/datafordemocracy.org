@@ -8,7 +8,8 @@ _site
 _site/
 .sass-cache/
 .jekyll-metadata
+vendor
 
 _site/*
+.jekyll-cache
 
-vendor
